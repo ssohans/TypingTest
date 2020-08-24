@@ -3,29 +3,43 @@
 <head>
     <title>Typing Test</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
-    <H1 class="head">Typing Test</H1>
+    <!-- <p>test</p> -->
+    <h1 id='i'>Typing Test</h1>
     <div class="time">
-        <ul>
-            <li>1 min</li>
-            <li>2 min</li>
-            <li>3 min</li>
-            <li>5 min</li>
-            <li><input type="text" name="cust">min</li>
-        </ul>
+        <input type="radio" name="time" value="1" id="1min" class="zz">
+        <input type="radio" name="time" value="2" id="2min" class="zz">
+        <input type="radio" name="time" value="3" id="3min" class="zz">
+        <input type="radio" name="time" value="5" id="5min" class="zz">
+        <label for="1min">1 minute</label>
+        <label for="2min">2 minutes</label>
+        <label for="3min">3 minutes</label>
+        <label for="5min">5 minutes</label>
+
+        <p class="errormin">Please select minutes</p>
     </div>
     <div class="para">
-        
+    <label for="pragrpahs">Choose a story to write:</label>
+        <select name="pragrpahs" class="opt">
+            <option value="1">Paragraph 1</option>
+            <option value="2">Paragraph 2</option>
+            <option value="3">Paragraph 3</option>
+            <option value="4">Paragraph 4</option>
+        </select>
+        <br>
+        <button id = "start">start</button>
     </div>
+
     <div class="words">
         
     </div>
+
     <div class="box">
-        
+        <textarea>start typing here...</textarea>
     </div>
-    <div class="keyboard">
-        
-    </div>
+    
 </body>
 </html>
