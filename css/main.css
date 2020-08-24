@@ -1,0 +1,16 @@
+.head{
+    text-align: center;
+    font-size: 40px;
+
+}
+ul {
+    list-style: none;
+    text-align: center;
+
+
+}
+ul li{
+
+    display: inline;
+    margin-left: 15px;
+}
