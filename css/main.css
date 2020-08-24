@@ -50,12 +50,74 @@ h1{
     text-align: center;
 }
 .box textarea{
+    padding: 10px;
     width: 40%;
     height: 100px;
-    color: grey;
+    word-wrap: break-word;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    text-align: justify;
+    overflow: -moz-scrollbars-none;
 }
+.box textarea::-webkit-scrollbar { width: 0 !important }
 
 .words{
-    text-align: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+
+
+}
+.wordcontainer{
+   width: 40%; 
+   height: 100px;
+   margin: 0 auto;
+   margin-bottom: 20px;
+   padding: 10px;
+   position: relative;
+   border: 1px solid black; 
+   overflow-y: scroll;
+   overflow-x: hidden;
+   word-wrap: break-word;
+   overflow: -moz-scrollbars-none;
+   text-align: justify;
+
+ 
+}
+.wordcontainer::-webkit-scrollbar { width: 0 !important }
+
+.calculations{
     display: none;
 }
+.container{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.header{
+    
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.timer, .errors, .accuracy, 
+.cpm, .wpm { 
+  height: 60px; 
+  width: 70px; 
+  margin: 8px; 
+  padding: 12px; 
+  border-radius: 20%; 
+} 
+.cpm, .wpm  { 
+  display: none; 
+} 
+
+.correct{
+    color: green;
+}
+.wrong{
+    color: red;
+}
+
