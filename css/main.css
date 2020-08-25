@@ -1,7 +1,8 @@
+
 h1{
     text-align: center;
-    font-size: 40px;
-
+    font-size: 60px;
+    font-family: 'Annie Use Your Telescope';
 }
 .time{
     text-align: center;
@@ -12,25 +13,40 @@ h1{
     display: none; 
 }
 .time label{
+    font-size: 125%;
     color:grey;
+    padding: 10px;
+    border: 1px solid black; 
+    border-radius: 20px;
+
 }
 .time label:hover{
-    color:blue!important;
+    color:black!important;
+    background-color: grey!important;
+    /*font-size: 140%!important;*/
 }
-.px{
-    color:grey;
-}
-.px:hover{
-    color:red;
-}
+
+
 .para{
+    padding: 10px;
     text-align: center;
     margin-left: 7px;
     font-size: 20px;
 }
 .para label{
+    color:   #006600;
     margin-right: 5px;
+    font-size: 35px;
+}
+
+select , select option{
     font-size: 20px;
+    background-color: #f2f2f2;
+}
+
+select{
+    height: 40px;
+    border: none;
 }
 
 .buttons{
@@ -38,9 +54,21 @@ h1{
     width: 100%;
     text-align: center;
 }
-.buttons > *{
-    margin: 10px;
-    width: 100px;
+.buttons button{
+  margin: 10px;
+  padding: 10px;
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  border-radius: 12px;
+}
+button:hover {
+    background-color: #f44336;
 }
 #home{
     display: none;
@@ -50,7 +78,7 @@ h1{
     color: red;
 }
 
-.errormin{
+.errormin,.errorstory{
     display: none;
     color: red;
 }
@@ -61,13 +89,14 @@ h1{
 }
 .box textarea{
     padding: 10px;
-    width: 40%;
+    width: 80ch;
     height: 100px;
     word-wrap: break-word;
     overflow-y: scroll;
     overflow-x: hidden;
     text-align: justify;
     overflow: -moz-scrollbars-none;
+    font-size: 20px;
 }
 .box textarea::-webkit-scrollbar { width: 0 !important }
 
@@ -80,20 +109,21 @@ h1{
 
 }
 .wordcontainer{
-   width: 40%; 
+   width: 80ch; 
    height: 100px;
    margin: 0 auto;
    margin-bottom: 20px;
    padding: 10px;
    position: relative;
-   border: 1px solid black; 
+   /*border: 1px solid black; */
    overflow-y: scroll;
    overflow-x: hidden;
-   word-wrap: break-word;
+   word-wrap: normal;
    overflow: -moz-scrollbars-none;
-   text-align: justify;
+   font-size: 24px;
+   /*text-align: justify;*/
+   border: none;
 
- 
 }
 .wordcontainer::-webkit-scrollbar { width: 0 !important }
 
@@ -114,11 +144,13 @@ h1{
 }
 .timer, .errors, .accuracy, 
 .cpm, .wpm { 
-  height: 60px; 
+  height: 40px; 
   width: 70px; 
   margin: 8px; 
   padding: 12px; 
-  border-radius: 20%; 
+  border-radius: 12px; 
+  border: 1px solid black;
+ 
 } 
 .cpm, .wpm  { 
   display: none; 
@@ -133,9 +165,20 @@ h1{
 
 .focus{
     text-decoration: underline;
+    background-color: green;
+    color: black;
+    font-size: 30px;
+    padding: 5px;
 }
 
-.unfocus{
-    text-decoration: none;
+
+.wordcontainer p{
+    color:grey;
+}
+
+.notice{
+    color: grey;
+    text-align: center;
+    display: none;
 }
 

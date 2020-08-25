@@ -3,6 +3,7 @@
 <head>
     <title>Typing Test</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -19,17 +20,19 @@
         <label for="3min">3 minutes</label>
         <label for="5min">5 minutes</label>
 
-        <p class="errormin">Please select minutes</p>
+        <p class="errormin">Please select time!</p>
     </div>
     <div class="para">
-    <label for="pragrpahs">Choose a story to write:</label>
-        <select name="pragrpahs" class="opt">
+    <!-- <label for="pragrpahs">Choose a story to write:</label> -->
+        <select name="pragrpahs" class="opt" placeholder="here i am">
+            <option value="" disabled selected>Select a story to write</option>
             <option value="1">ALI BABA AND THE FORTY THIEVES </option>
             <option value="2">THE THREE WISHES</option>
-            <option value="3">Sly Fox </option>
+            <option value="3">SLY FOX </option>
             <option value="4">BEAUTY AND THE BEAST</option>
         </select>
-        <br>
+        <p class="errorstory">Please select a story!</p>
+
         
     </div>
     <div class="calculations">
@@ -61,12 +64,15 @@
 
     <div class="words">
         <div class="wordcontainer">
-            
+            <p>Please wait while loading the story.....</p>
         </div>
     </div>
 
     <div class="box">
         <textarea placeholder="Start typing here..."></textarea>
+    </div>
+    <div class="notice">
+        <p>N.B. backspace disabled.</p>
     </div>
 
     <div class='buttons'>
