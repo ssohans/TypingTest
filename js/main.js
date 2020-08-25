@@ -15,20 +15,25 @@ function time_count() {
     }
 }
 
-//game finished function
+//test finished function
 
 function finish(){
     clearInterval(interval);
     $('.timer').hide();
     var txt = $("textarea").val();
     $("textarea").prop('disabled', true);
-    var word = txt.spilt(" ");
+    var words = txt.split(" ");
+    var word = 0;
+    for(var i=0;i<words.lenght;i++){
+        if(words[i].lenght>0) word++;
+    }
     var cpm = (charTyped/min).toFixed(0);
     var wpm = (word.length/min).toFixed(0);
     $('.curr_wpm').text(wpm);
     $('.curr_cpm').text(cpm);
     $('.wpm').show();
     $('.cpm').show();
+    $('#home').show();
 }
 
 $(document).ready(function(){
@@ -77,7 +82,7 @@ $(document).ready(function(){
     }
 });
 
-  // start game when started type in textarea and check each charecter typed
+  // start test when started type in textarea and check each charecter typed
 
   $('textarea').keypress(function(e) {
         if(!start){
@@ -92,6 +97,7 @@ $(document).ready(function(){
         if(code==8){
             return ;
         }
+        $('.wordcontainer span').eq(charTyped).addClass('unfocus');
         if(char === res){
             $('.wordcontainer span').eq(charTyped).addClass('correct');
             correct++;
@@ -99,6 +105,7 @@ $(document).ready(function(){
             $('.wordcontainer span').eq(charTyped).addClass('wrong');
         }
         charTyped++;
+        $('.wordcontainer span').eq(charTyped).addClass('focus');
         var acu  = ((correct/charTyped)*100).toFixed(2);
         $('.curr_accuracy').text(acu);
         var err = (charTyped-correct);
@@ -107,6 +114,10 @@ $(document).ready(function(){
             finish();
         }
 
+    });
+
+    $('#home').click(function() {
+        location.reload(true);
     });
 
 

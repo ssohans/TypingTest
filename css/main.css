@@ -32,11 +32,21 @@ h1{
     margin-right: 5px;
     font-size: 20px;
 }
-.para button{
-    margin-top: 10px;
-}
 
+.buttons{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.buttons > *{
+    margin: 10px;
+    width: 100px;
+}
+#home{
+    display: none;
+}
 .para button:hover, ul li:hover{
+
     color: red;
 }
 
@@ -119,5 +129,13 @@ h1{
 }
 .wrong{
     color: red;
+}
+
+.focus{
+    text-decoration: underline;
+}
+
+.unfocus{
+    text-decoration: none;
 }
 
