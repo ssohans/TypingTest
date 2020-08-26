@@ -50,7 +50,7 @@ $(document).ready(function(){
 });
   // function for new interface
   var container;
-  
+  var c = 259;
   $("#start").click(function(){
 
     min = $('.zz:checked').val();
@@ -76,7 +76,7 @@ $(document).ready(function(){
             }
             $('.wordcontainer p').hide();
             container = $('.wordcontainer span');
-            
+            c = container.eq(0).offset().top
         });
         
     }
@@ -93,7 +93,7 @@ $(document).ready(function(){
 });
 
   // start test when started type in textarea and check each charecter typed
-  var c = 259;
+  
   var last = 0;
   $('textarea').keypress(function(e) {
 
@@ -144,4 +144,5 @@ $(document).ready(function(){
 
 
 });
+
 
