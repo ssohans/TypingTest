@@ -161,13 +161,14 @@ button:hover {
 }
 .wrong{
     color: red;
+    text-decoration: underline;
 }
 
 .focus{
     text-decoration: underline;
-    background-color: green;
+    background-color: rgba(0, 255, 0, 0.5);
     color: black;
-    font-size: 30px;
+    /*font-size: 30px;*/
     padding: 5px;
 }
 

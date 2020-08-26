@@ -4,6 +4,17 @@ var charTyped = 0;
 var correct = 0;
 var interval;
 var min,story;
+
+// function show accuracy
+
+function acc_erros(){
+    var acu  = ((correct/charTyped)*100).toFixed(2);
+    $('.curr_accuracy').text(acu);
+    var err = (charTyped-correct);
+    if(err<0) err = 0;
+    $('.curr_errors').text(err);
+}
+
 //interval function to update timer
 function time_count() {
     timer--;
@@ -85,16 +96,45 @@ $(document).ready(function(){
   $('#stop').click(function() {
       finish();
   });
-
-  $('textarea').on("keydown", function (e) {
-    if (e.which === 8 && !$(e.target).is("")) {
-        e.preventDefault();
-    }
-});
+// // backspace disable funcniton
+//   $('textarea').on("keydown", function (e) {
+//     if (e.which === 8 && !$(e.target).is("")) {
+//         e.preventDefault();
+//     }
+// });
 
   // start test when started type in textarea and check each charecter typed
   
   var last = 0;
+
+  $('textarea').keydown(function(e) {
+      var code = e.keyCode || e.which;
+      if(code==8){
+        container.eq(charTyped).removeClass('focus');
+        if(charTyped==0) return ;
+        charTyped--;
+        var cls = container.eq(charTyped).attr('class');
+        if(cls=="correct"){
+            correct--;
+        }
+        container.eq(charTyped).removeClass();
+        container.eq(charTyped).addClass('focus');
+        acc_erros();
+        var v = container.eq(charTyped).offset().top;
+        v = Math.floor( v-c );
+        // console.log(v,c,last);
+        if(v<0){
+            
+            $(".wordcontainer").animate({
+                scrollTop: last+v
+            }, 0);
+            // c = $('.wordcontainer span').eq(charTyped).offset().top;
+            last += v;
+        }
+      }
+  });
+
+
   $('textarea').keypress(function(e) {
 
         if(!start){
@@ -107,9 +147,8 @@ $(document).ready(function(){
         var code = e.keyCode || e.which;
         var res = String.fromCharCode(code);
         var char = container.eq(charTyped).text();
-        if(code==8){
-            return ;
-        }
+        container.eq(charTyped).removeClass('focus');
+    
         container.eq(charTyped).removeClass('focus');
         if(char === res){
             container.eq(charTyped).addClass('correct');
@@ -119,12 +158,9 @@ $(document).ready(function(){
         }
         charTyped++;
         container.eq(charTyped).addClass('focus');
-        var acu  = ((correct/charTyped)*100).toFixed(2);
-        $('.curr_accuracy').text(acu);
-        var err = (charTyped-correct);
-        $('.curr_errors').text(err);
-        var v = container.eq(charTyped).offset().top
-        v = Math.floor( v-c )
+        acc_erros();
+        var v = container.eq(charTyped).offset().top;
+        v = Math.floor( v-c );
         // console.log(v,c,last);
         if(v>0){
             
