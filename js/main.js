@@ -49,7 +49,7 @@ $(document).ready(function(){
     $(x).css("background-color","grey");
 });
   // function for new interface
-
+  var container;
   
   $("#start").click(function(){
 
@@ -75,8 +75,10 @@ $(document).ready(function(){
                 $('.wordcontainer').append('<span>'+data[i]+'</span>');
             }
             $('.wordcontainer p').hide();
+            container = $('.wordcontainer span');
             
         });
+        
     }
 });
 
@@ -104,26 +106,26 @@ $(document).ready(function(){
         // ++charTyped;
         var code = e.keyCode || e.which;
         var res = String.fromCharCode(code);
-        var char = $('.wordcontainer span').eq(charTyped).text();
+        var char = container.eq(charTyped).text();
         if(code==8){
             return ;
         }
-        $('.wordcontainer span').eq(charTyped).removeClass('focus');
+        container.eq(charTyped).removeClass('focus');
         if(char === res){
-            $('.wordcontainer span').eq(charTyped).addClass('correct');
+            container.eq(charTyped).addClass('correct');
             correct++;
         }else{
-            $('.wordcontainer span').eq(charTyped).addClass('wrong');
+            container.eq(charTyped).addClass('wrong');
         }
         charTyped++;
-        $('.wordcontainer span').eq(charTyped).addClass('focus');
+        container.eq(charTyped).addClass('focus');
         var acu  = ((correct/charTyped)*100).toFixed(2);
         $('.curr_accuracy').text(acu);
         var err = (charTyped-correct);
         $('.curr_errors').text(err);
-        var v = $('.wordcontainer span').eq(charTyped).offset().top
+        var v = $container.eq(charTyped).offset().top
         v = Math.floor( v-c )
-        console.log(v,c,last);
+        // console.log(v,c,last);
         if(v>0){
             
             $(".wordcontainer").animate({
