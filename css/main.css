@@ -70,7 +70,7 @@ select{
 button:hover {
     background-color: #f44336;
 }
-#home{
+#home,#stop{
     display: none;
 }
 .para button:hover, ul li:hover{
