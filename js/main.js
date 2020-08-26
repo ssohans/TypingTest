@@ -123,7 +123,7 @@ $(document).ready(function(){
         $('.curr_accuracy').text(acu);
         var err = (charTyped-correct);
         $('.curr_errors').text(err);
-        var v = $container.eq(charTyped).offset().top
+        var v = container.eq(charTyped).offset().top
         v = Math.floor( v-c )
         // console.log(v,c,last);
         if(v>0){
